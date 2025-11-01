@@ -1,4 +1,13 @@
-import { IsEmail, isString, IsString, Max, MinLength } from 'class-validator';
+import {
+  IsEmail,
+  IsEnum,
+  IsNumber,
+  isString,
+  IsString,
+  Max,
+  MinLength,
+} from 'class-validator';
+import { UserTable } from 'src/db/schemas';
 
 export class CreaateUserDto {
   @IsEmail()
