@@ -4,19 +4,16 @@
     allow reusability easier and type , set default value to them
 */
 export default () => ({
-  // information about app
   app: {
-    name: process.env.APP_NAME,
-    host: process.env.APP_HOST,
-    port: process.env.APP_PORT,
-    env: process.env.APP_ENV,
+    port: parseInt(process.env.APP_PORT || '3000', 10),
   },
 
   database: {
     user: process.env.DB_USER,
     host: process.env.DB_HOST,
-    port: process.env.DB_PORT || 3306,
+    port: parseInt(process.env.DB_PORT || '3306', 10),
     name: process.env.DB_NAME,
     password: process.env.DB_PASSWORD,
+    url: process.env.DB_URL!,
   },
 });

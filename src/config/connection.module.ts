@@ -12,12 +12,12 @@ export const DRIZZLE_TOKEN = 'DRIZZLE_INSTANCE';
     {
       provide: DRIZZLE_TOKEN,
       inject: [ConfigService],
-      useFactory: (configService: ConfigService) => {
-        const connection = mysql.createPool({
+      useFactory: async (configService: ConfigService) => {
+        const connection = await mysql.createPool({
           user: configService.get<string>('database.user'),
           host: configService.get<string>('database.host'),
           port: configService.get<number>('database.port'),
-          database: configService.get<string>('database.namev'),
+          database: configService.get<string>('database.name'),
           password: configService.get<string>('database.password'),
         });
 

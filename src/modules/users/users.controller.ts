@@ -13,6 +13,6 @@ export class UsersController {
   // crud
   @Get()
   find() {
-    return this.configService.get<string>('database.name');
+    return this.configService.get<string>('database.url');
   }
 }
