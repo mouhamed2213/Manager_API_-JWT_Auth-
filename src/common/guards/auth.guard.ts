@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivate {
     const token = this.extractDataFromHeader(request);
 
     if (!token) {
-      console.log('Token Missed : guard blocked');
+      console.log('Token Missed : auth  guard blocked');
       throw new UnauthorizedException('Veuillez vous connecter ');
     }
 

@@ -17,7 +17,7 @@ import { AuthGuard } from '../../common/guards/auth.guard';
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
-  @UseGuards(AuthGuard) //
+  // @UseGuards(AuthGuard) // avoid this and set a global  guard
   @Post('login')
   userLogin(@Body() createAuthDto: CreateAuthDto, @Request() req) {
     console.log('Request : ', req.headers);
