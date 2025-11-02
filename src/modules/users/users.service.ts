@@ -3,12 +3,14 @@ import {
   Injectable,
   BadRequestException,
   ConflictException,
+  UnauthorizedException,
 } from '@nestjs/common';
 import { CreaateUserDto } from './DTO/user.dto';
 import { DRIZZLE_TOKEN } from '../../config/connection.module';
 import { User } from './interface';
 import { UserTable } from 'src/db/schemas';
 import * as bcrypt from 'bcrypt';
+import { and, eq } from 'drizzle-orm';
 
 @Injectable()
 export class UsersService {
@@ -22,18 +24,17 @@ export class UsersService {
       const hashPassword = await bcrypt.hash(creaateUserDto.password, 10);
       const insertUser = { ...creaateUserDto, password: hashPassword };
 
-      const [user] = await this.db.insert(UserTable).values(insertUser);
-      if (user.affectedRows > 0) {
-        console.log('user Created ', user.insertId);
+      const [newUser] = await this.db.insert(UserTable).values(insertUser);
+      if (!newUser) {
+        // Sécurité au cas où l'insertion échouerait silencieusement
+        throw new Error("La création de l'utilisateur a échoué.");
       }
-      return user;
+      return newUser;
 
       //
     } catch (error) {
-      if (error.cause['code'] === 'ER_DUP_ENTRY') {
-        // error throwed from databas
-        console.log('ERROR CODE ', error.cause['code']);
-        throw new ConflictException('Email already exist');
+      if (error.cause && error.cause['code'] === 'ER_DUP_ENTRY') {
+        throw new ConflictException('Cet email est déjà utilisé.');
       }
       throw error; // for every other error
     }
@@ -47,6 +48,36 @@ export class UsersService {
       return users;
     } catch (error) {
       console.log('ERROR FIND USER    ', error);
+      throw error;
+    }
+  }
+
+  // find one user
+  async findOne(creaateUserDto: CreaateUserDto): Promise<User> {
+    try {
+      const { email, password } = creaateUserDto;
+
+      // find user query
+      console.log('Loggin information ', email, ' : ', password);
+
+      const [user] = await this.db
+        .select()
+        .from(UserTable)
+        .where(eq(UserTable.email, email));
+      if (!user) {
+        throw new UnauthorizedException('Email or password incorrect');
+      }
+
+      // compare password
+      const checkPassword = await bcrypt.compare(password, user.password);
+      if (!checkPassword) {
+        throw new UnauthorizedException('Email or password incorrect');
+      }
+
+      console.log('logged ', [user]);
+      return user;
+    } catch (error) {
+      console.log('Error : ', error);
       throw error;
     }
   }

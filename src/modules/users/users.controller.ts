@@ -11,17 +11,15 @@ export class UsersController {
     private configService: ConfigService,
   ) {}
 
-  // strore user
+  // // strore user
   @HttpCode(201)
   @Post()
-  createUser(@Body() creaateUserDto: CreaateUserDto) {
-    return this.usersService.createUser(creaateUserDto);
+  async createUser(@Body() creaateUserDto: CreaateUserDto) {
+    return await this.usersService.createUser(creaateUserDto);
   }
 
   @Get()
-  findUser() {
-    return this.usersService.find();
+  async findUser() {
+    return await this.usersService.find();
   }
-
-  // find one
 }
