@@ -1,20 +1,13 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-} from '@nestjs/common';
+import { Controller, Post, Body, Get, Request } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { CreateAuthDto } from './dto/create-auth.dto';
-import { UpdateAuthDto } from './dto/update-auth.dto';
-
+import { Public } from 'src/common/decorators/public/public.decorator';
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
+  // @UseGuards(AuthGuard) // avoid this and set a global  guard
+  @Public()
   @Post('login')
   userLogin(@Body() createAuthDto: CreateAuthDto) {
     return this.authService.login(createAuthDto);
@@ -23,5 +16,11 @@ export class AuthController {
   @Post('store')
   create(@Body() createAuthDto: CreateAuthDto) {
     return this.authService.create(createAuthDto);
+  }
+
+  @Get('profile')
+  test() {
+    // console.log('Request ');
+    return `YOUR\'RE PROFILE `;
   }
 }

@@ -1,9 +1,9 @@
 import {
   Inject,
   Injectable,
-  BadRequestException,
   ConflictException,
   UnauthorizedException,
+  NotFoundException,
 } from '@nestjs/common';
 import { CreaateUserDto } from './DTO/user.dto';
 import { DRIZZLE_TOKEN } from '../../config/connection.module';
@@ -58,23 +58,19 @@ export class UsersService {
       const { email, password } = creaateUserDto;
 
       // find user query
-      console.log('Loggin information ', email, ' : ', password);
-
       const [user] = await this.db
         .select()
         .from(UserTable)
         .where(eq(UserTable.email, email));
       if (!user) {
-        throw new UnauthorizedException('Email or password incorrect');
+        throw new NotFoundException('Cannot find user');
       }
 
       // compare password
       const checkPassword = await bcrypt.compare(password, user.password);
       if (!checkPassword) {
-        throw new UnauthorizedException('Email or password incorrect');
+        throw new UnauthorizedException("password doesn't match");
       }
-
-      console.log('logged ', [user]);
       return user;
     } catch (error) {
       console.log('Error : ', error);
