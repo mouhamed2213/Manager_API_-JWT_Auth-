@@ -6,12 +6,13 @@ import { AuthModule } from './modules/auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 import AppConfig from './config/app.config';
 import { ConnectionModule } from './config/connection.module';
+// import { AuthModule } from './auth/auth/auth.module';
 @Module({
   imports: [
-    UsersModule,
-    AuthModule,
     ConfigModule.forRoot({ load: [AppConfig], isGlobal: true }),
     ConnectionModule,
+    UsersModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

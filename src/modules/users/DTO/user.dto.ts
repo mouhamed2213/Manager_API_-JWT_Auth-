@@ -1,6 +1,7 @@
 import {
   IsEmail,
   IsEnum,
+  IsNotEmpty,
   IsNumber,
   isString,
   IsString,
@@ -11,9 +12,11 @@ import { UserTable } from 'src/db/schemas';
 
 export class CreaateUserDto {
   @IsEmail()
+  @IsNotEmpty()
   email: string;
 
   @IsString()
+  @IsNotEmpty()
   @MinLength(3)
   password: string;
 
