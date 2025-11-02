@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get } from '@nestjs/common';
+import { Controller, Post, Body, Get, Request } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { CreateAuthDto } from './dto/create-auth.dto';
 import { Public } from 'src/common/decorators/public/public.decorator';
@@ -18,8 +18,9 @@ export class AuthController {
     return this.authService.create(createAuthDto);
   }
 
-  @Get('test')
+  @Get('profile')
   test() {
-    return 'Test Auth Guard ';
+    // console.log('Request ');
+    return `YOUR\'RE PROFILE `;
   }
 }
