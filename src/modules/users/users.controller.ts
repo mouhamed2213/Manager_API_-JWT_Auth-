@@ -1,7 +1,6 @@
-import { Body, Controller, Get, HttpCode, Post } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, Post, Request } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { ConfigService } from '@nestjs/config';
-import { threadId } from 'worker_threads';
 import { CreaateUserDto } from './DTO/user.dto';
 import { User } from './interface';
 @Controller('users')
@@ -21,5 +20,11 @@ export class UsersController {
   @Get()
   async findUser() {
     return await this.usersService.find();
+  }
+
+  @Get('profile')
+  UserProfileInfo(@Request() req) {
+    // console.log('Request ');
+    return req.user;
   }
 }

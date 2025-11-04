@@ -19,7 +19,7 @@ export class AuthController {
   }
 
   @Get('profile')
-  test(@Request() req) {
+  UserProfileInfo(@Request() req) {
     // console.log('Request ');
     return req.user;
   }
