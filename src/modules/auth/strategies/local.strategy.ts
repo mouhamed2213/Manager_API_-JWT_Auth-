@@ -7,17 +7,22 @@ import { CreateAuthDto } from '../dto/create-auth.dto';
 @Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy) {
   constructor(private authService: AuthService) {
-    super();
+    super({
+      usernameField: 'email',
+      passwordField: 'password',
+    });
   }
 
   // user === user ? user : UnauthorizedException
-  async validate(createAuthDto: CreateAuthDto): Promise<any> {
-    const user = await this.authService.login(createAuthDto);
+  async validate(email: string, password: string): Promise<any> {
+    const userData = { email, password };
+    const user = await this.authService.login(userData);
+
+    console.log(user);
     if (!user) {
       throw new UnauthorizedException('access denied');
     }
 
-    console.log('Hello from The Strategy', user);
     return user;
   }
 }

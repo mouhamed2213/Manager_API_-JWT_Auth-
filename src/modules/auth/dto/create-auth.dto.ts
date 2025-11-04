@@ -20,5 +20,5 @@ export class CreateAuthDto {
 
   @IsString()
   @IsOptional()
-  role: string;
+  role?: string;
 }

@@ -4,6 +4,7 @@ import { UpdateAuthDto } from './dto/update-auth.dto';
 import { UsersService } from '../users/users.service';
 import { JwtService } from '@nestjs/jwt';
 import { User } from '../users/interface';
+import { Payload } from 'src/shared/interfaces/common.interfaces';
 
 @Injectable()
 export class AuthService {
@@ -24,9 +25,12 @@ export class AuthService {
     const { password, ...userP } = user;
 
     // generate the access token
-    const payload = { sub: userP.id, email: userP.email, userP: user.role };
+    const payload: Payload = {
+      sub: userP.id!,
+      email: userP.email,
+      userRole: user.role!,
+    };
     const access_token = await this.jwtService.signAsync(payload);
-    console.log('User access_Token', { access_token });
 
     return { access_token };
   }

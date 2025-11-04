@@ -1,19 +1,5 @@
 {
   "nodes": {
-    "44861147": {
-      "id": "44861147",
-      "parent": "-536515674",
-      "metadata": {
-        "type": "provider",
-        "internal": false,
-        "sourceModuleName": "JwtModule",
-        "durable": false,
-        "static": true,
-        "transient": false,
-        "exported": false,
-        "token": {}
-      }
-    },
     "95355232": {
       "id": "95355232",
       "label": "JwtModule",
@@ -28,7 +14,7 @@
         "transient": false,
         "exported": false,
         "token": "JwtModule",
-        "initTime": 4.383899999999812
+        "initTime": 2.074300000000221
       }
     },
     "203550704": {
@@ -44,7 +30,7 @@
         "transient": false,
         "exported": true,
         "token": "ExternalContextCreator",
-        "initTime": 5.546400000000176
+        "initTime": 3.0511999999998807
       }
     },
     "211572259": {
@@ -71,7 +57,7 @@
         "transient": false,
         "exported": false,
         "token": "InternalCoreModule",
-        "initTime": 6.416599999999562
+        "initTime": 3.8380999999999403
       }
     },
     "233936880": {
@@ -103,6 +89,22 @@
         "transient": false,
         "exported": false,
         "token": "ModuleRef"
+      }
+    },
+    "314511636": {
+      "id": "314511636",
+      "label": "28458c6b05b222f7483b7",
+      "parent": "-1134487807",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "AuthModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "28458c6b05b222f7483b7",
+        "subtype": "guard"
       }
     },
     "555176277": {
@@ -159,23 +161,7 @@
         "transient": false,
         "exported": true,
         "token": "Reflector",
-        "initTime": 6.104400000000169
-      }
-    },
-    "782807713": {
-      "id": "782807713",
-      "label": "CONFIGURATION(14bed659-018b-4af3-b05f-d4cd2bfc7ba0)",
-      "parent": "1712628187",
-      "metadata": {
-        "type": "provider",
-        "internal": false,
-        "sourceModuleName": "ConfigModule",
-        "durable": false,
-        "static": true,
-        "transient": false,
-        "exported": true,
-        "token": "CONFIGURATION(14bed659-018b-4af3-b05f-d4cd2bfc7ba0)",
-        "initTime": 5.063299999999799
+        "initTime": 3.590400000000045
       }
     },
     "863216333": {
@@ -216,7 +202,8 @@
         "static": true,
         "transient": false,
         "exported": true,
-        "token": "Symbol(CONFIG_SERVICE)"
+        "token": "Symbol(CONFIG_SERVICE)",
+        "initTime": 3.398200000000088
       }
     },
     "1063746662": {
@@ -232,7 +219,7 @@
         "transient": false,
         "exported": true,
         "token": "CONFIGURATION_TOKEN",
-        "initTime": 4.972000000000207
+        "initTime": 2.585399999999936
       }
     },
     "1063852564": {
@@ -249,7 +236,23 @@
         "transient": false,
         "exported": false,
         "token": "ConnectionModule",
-        "initTime": 4.87689999999975
+        "initTime": 2.50669999999991
+      }
+    },
+    "1064117840": {
+      "id": "1064117840",
+      "label": "ApplicationConfig",
+      "parent": "-1959092373",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "PassportModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
       }
     },
     "1070370213": {
@@ -295,7 +298,8 @@
         "static": true,
         "transient": false,
         "exported": false,
-        "token": "CONFIGURATION_LOADER"
+        "token": "CONFIGURATION_LOADER",
+        "initTime": 3.66379999999981
       }
     },
     "1404752088": {
@@ -310,7 +314,14 @@
         "static": true,
         "transient": false,
         "exported": false,
-        "token": "AuthController"
+        "token": "AuthController",
+        "enhancers": [
+          {
+            "id": "314511636",
+            "methodKey": "userLogin",
+            "subtype": "guard"
+          }
+        ]
       }
     },
     "1434456218": {
@@ -326,7 +337,8 @@
         "scope": 0,
         "transient": false,
         "exported": true,
-        "token": "Reflector"
+        "token": "Reflector",
+        "initTime": 4.569400000000314
       }
     },
     "1542581243": {
@@ -401,7 +413,7 @@
         "transient": false,
         "exported": false,
         "token": "ConfigModule",
-        "initTime": 5.453100000000177
+        "initTime": 2.950800000000072
       }
     },
     "1787828844": {
@@ -418,7 +430,7 @@
         "transient": false,
         "exported": false,
         "token": "ConfigHostModule",
-        "initTime": 4.998900000000049
+        "initTime": 2.603900000000067
       }
     },
     "1919157847": {
@@ -435,7 +447,7 @@
         "transient": false,
         "exported": true,
         "token": "REQUEST",
-        "initTime": 5.054200000000037
+        "initTime": 2.761199999999917
       }
     },
     "2118694856": {
@@ -500,7 +512,7 @@
         "transient": true,
         "exported": true,
         "token": "INQUIRER",
-        "initTime": 5.042500000000018
+        "initTime": 2.7489000000000487
       }
     },
     "-26938366": {
@@ -516,7 +528,7 @@
         "transient": false,
         "exported": true,
         "token": "ModulesContainer",
-        "initTime": 5.540300000000116
+        "initTime": 2.9646999999999935
       }
     },
     "-326832201": {
@@ -532,7 +544,7 @@
         "transient": false,
         "exported": true,
         "token": "HttpAdapterHost",
-        "initTime": 5.527099999999791
+        "initTime": 2.9479999999998654
       }
     },
     "-702581189": {
@@ -548,7 +560,7 @@
         "transient": false,
         "exported": true,
         "token": "LazyModuleLoader",
-        "initTime": 5.522100000000137
+        "initTime": 2.943200000000161
       }
     },
     "-1904419534": {
@@ -564,7 +576,7 @@
         "transient": false,
         "exported": true,
         "token": "SerializedGraph",
-        "initTime": 5.412699999999859
+        "initTime": 2.9284999999999854
       }
     },
     "-19112576": {
@@ -591,7 +603,7 @@
         "transient": false,
         "exported": false,
         "token": "AppModule",
-        "initTime": 5.483200000000124
+        "initTime": 2.970100000000002
       }
     },
     "-71302842": {
@@ -626,22 +638,6 @@
         "token": "ApplicationConfig"
       }
     },
-    "-2130614055": {
-      "id": "-2130614055",
-      "label": "AppService",
-      "parent": "-19112576",
-      "metadata": {
-        "type": "provider",
-        "internal": false,
-        "sourceModuleName": "AppModule",
-        "durable": false,
-        "static": true,
-        "transient": false,
-        "exported": false,
-        "token": "AppService",
-        "initTime": 5.46329999999989
-      }
-    },
     "-503631789": {
       "id": "-503631789",
       "label": "ConfigService",
@@ -654,7 +650,24 @@
         "static": true,
         "transient": false,
         "exported": true,
-        "token": "ConfigService"
+        "token": "ConfigService",
+        "initTime": 5.090900000000147
+      }
+    },
+    "-732510179": {
+      "id": "-732510179",
+      "label": "CONFIGURATION(020dadce-0d5d-48a5-a797-ebe9f7970815)",
+      "parent": "1712628187",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ConfigModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "CONFIGURATION(020dadce-0d5d-48a5-a797-ebe9f7970815)",
+        "initTime": 2.652099999999791
       }
     },
     "-1267340809": {
@@ -722,7 +735,7 @@
         "transient": false,
         "exported": false,
         "token": "UsersModule",
-        "initTime": 4.833900000000085
+        "initTime": 2.462300000000141
       }
     },
     "-618964563": {
@@ -796,7 +809,7 @@
         "transient": false,
         "exported": false,
         "token": "AuthModule",
-        "initTime": 4.782900000000154
+        "initTime": 2.4164999999998145
       }
     },
     "-120792986": {
@@ -844,7 +857,7 @@
         "transient": false,
         "exported": false,
         "token": "ConfigModule",
-        "initTime": 4.4538000000002285
+        "initTime": 2.1429000000002816
       }
     },
     "-408540750": {
@@ -876,7 +889,51 @@
         "scope": 0,
         "transient": false,
         "exported": true,
-        "token": "ConfigService"
+        "token": "ConfigService",
+        "initTime": 4.235599999999977
+      }
+    },
+    "-1959092373": {
+      "id": "-1959092373",
+      "label": "PassportModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "-1891293700": {
+      "id": "-1891293700",
+      "label": "PassportModule",
+      "parent": "-1959092373",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "PassportModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "PassportModule",
+        "initTime": 2.0850000000000364
+      }
+    },
+    "-1677432987": {
+      "id": "-1677432987",
+      "label": "ModuleRef",
+      "parent": "-1959092373",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "PassportModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
       }
     },
     "-536515674": {
@@ -922,6 +979,33 @@
     }
   },
   "edges": {
+    "185446636": {
+      "source": "-1959092373",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "PassportModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "185446636"
+    },
+    "189694679": {
+      "source": "1434456218",
+      "target": "671882984",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "InternalCoreModule",
+        "sourceClassName": "Reflector",
+        "targetClassName": "Reflector",
+        "sourceClassToken": "Reflector",
+        "targetClassToken": "Reflector",
+        "targetModuleName": "InternalCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor",
+        "internal": true
+      },
+      "id": "189694679"
+    },
     "219775656": {
       "source": "-19112576",
       "target": "-1134487807",
@@ -942,6 +1026,16 @@
       },
       "id": "251974692"
     },
+    "265905952": {
+      "source": "-1959092373",
+      "target": "-1267340809",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "PassportModule",
+        "targetModuleName": "ConnectionModule"
+      },
+      "id": "265905952"
+    },
     "289403048": {
       "source": "-1134487807",
       "target": "-2003726489",
@@ -961,6 +1055,22 @@
         "targetModuleName": "ConfigHostModule"
       },
       "id": "353572985"
+    },
+    "364651506": {
+      "source": "1310883338",
+      "target": "-732510179",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ConfigModule",
+        "sourceClassName": "CONFIGURATION_LOADER",
+        "targetClassName": "CONFIGURATION(020dadce-0d5d-48a5-a797-ebe9f7970815)",
+        "sourceClassToken": "CONFIGURATION_LOADER",
+        "targetClassToken": "CONFIGURATION(020dadce-0d5d-48a5-a797-ebe9f7970815)",
+        "targetModuleName": "ConfigModule",
+        "keyOrIndex": 1,
+        "injectionType": "constructor"
+      },
+      "id": "364651506"
     },
     "584653416": {
       "source": "1712628187",
@@ -1032,6 +1142,16 @@
       },
       "id": "987755577"
     },
+    "998772595": {
+      "source": "-1134487807",
+      "target": "-1959092373",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AuthModule",
+        "targetModuleName": "PassportModule"
+      },
+      "id": "998772595"
+    },
     "1056428433": {
       "source": "-19112576",
       "target": "555176277",
@@ -1102,6 +1222,22 @@
       },
       "id": "1414936007"
     },
+    "1475920902": {
+      "source": "-503631789",
+      "target": "930519593",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ConfigModule",
+        "sourceClassName": "ConfigService",
+        "targetClassName": "ConfigService",
+        "sourceClassToken": "ConfigService",
+        "targetClassToken": "Symbol(CONFIG_SERVICE)",
+        "targetModuleName": "ConfigHostModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "1475920902"
+    },
     "1690588001": {
       "source": "-1134487807",
       "target": "1712628187",
@@ -1151,6 +1287,70 @@
         "targetModuleName": "ConfigModule"
       },
       "id": "2109546608"
+    },
+    "-951393523": {
+      "source": "930519593",
+      "target": "1063746662",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ConfigHostModule",
+        "sourceClassName": "ConfigService",
+        "targetClassName": "CONFIGURATION_TOKEN",
+        "sourceClassToken": "Symbol(CONFIG_SERVICE)",
+        "targetClassToken": "CONFIGURATION_TOKEN",
+        "targetModuleName": "ConfigHostModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-951393523"
+    },
+    "-1045206778": {
+      "source": "1310883338",
+      "target": "1063746662",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ConfigModule",
+        "sourceClassName": "CONFIGURATION_LOADER",
+        "targetClassName": "CONFIGURATION_TOKEN",
+        "sourceClassToken": "CONFIGURATION_LOADER",
+        "targetClassToken": "CONFIGURATION_TOKEN",
+        "targetModuleName": "ConfigHostModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-1045206778"
+    },
+    "-1532183452": {
+      "source": "-503631789",
+      "target": "-732510179",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ConfigModule",
+        "sourceClassName": "ConfigService",
+        "targetClassName": "CONFIGURATION(020dadce-0d5d-48a5-a797-ebe9f7970815)",
+        "sourceClassToken": "ConfigService",
+        "targetClassToken": "CONFIGURATION(020dadce-0d5d-48a5-a797-ebe9f7970815)",
+        "targetModuleName": "ConfigModule",
+        "keyOrIndex": 1,
+        "injectionType": "constructor"
+      },
+      "id": "-1532183452"
+    },
+    "-1851085465": {
+      "source": "-503631788",
+      "target": "930519593",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ConfigModule",
+        "sourceClassName": "ConfigService",
+        "targetClassName": "ConfigService",
+        "sourceClassToken": "ConfigService",
+        "targetClassToken": "Symbol(CONFIG_SERVICE)",
+        "targetModuleName": "ConfigHostModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-1851085465"
     },
     "-844262897": {
       "source": "-19112576",
@@ -1312,6 +1512,46 @@
       },
       "id": "-1666504003"
     },
+    "-947841774": {
+      "source": "-1959092373",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "PassportModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "-947841774"
+    },
+    "-1905114051": {
+      "source": "-1959092373",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "PassportModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-1905114051"
+    },
+    "-26368293": {
+      "source": "-1959092373",
+      "target": "-536515674",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "PassportModule",
+        "targetModuleName": "JwtModule"
+      },
+      "id": "-26368293"
+    },
+    "-979293247": {
+      "source": "-536515674",
+      "target": "863216333",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "JwtModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "-979293247"
+    },
     "-1755462187": {
       "source": "-536515674",
       "target": "-1267340809",
@@ -1321,6 +1561,21 @@
         "targetModuleName": "ConnectionModule"
       },
       "id": "-1755462187"
+    },
+    "-800169741": {
+      "source": "1404752088",
+      "target": "314511636",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "AuthModule",
+        "sourceClassName": "AuthController",
+        "targetClassName": "28458c6b05b222f7483b7",
+        "sourceClassToken": "AuthController",
+        "targetClassToken": "28458c6b05b222f7483b7",
+        "targetModuleName": "AuthModule",
+        "injectionType": "decorator"
+      },
+      "id": "-800169741"
     }
   },
   "entrypoints": {},
@@ -1331,8 +1586,16 @@
   "status": "partial",
   "metadata": {
     "cause": {
-      "type": "unknown",
-      "error": {}
+      "type": "unknown-dependencies",
+      "context": {
+        "index": 0,
+        "dependencies": [
+          "AppService"
+        ],
+        "name": "AppService"
+      },
+      "moduleId": "-19112576",
+      "nodeId": "233936880"
     }
   }
 }

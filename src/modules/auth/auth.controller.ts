@@ -1,26 +1,37 @@
-import { Controller, Post, Body, Get, Request } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Get,
+  Request,
+  UseGuards,
+} from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { CreateAuthDto } from './dto/create-auth.dto';
 import { Public } from 'src/common/decorators/public/public.decorator';
+import { AuthGuard } from '@nestjs/passport';
+import { LocalAuthGuard } from 'src/common/guards/local.auth.guard';
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
-  // @UseGuards(AuthGuard) // avoid this and set a global  guard
-  @Public()
+  // @Public()
+  @UseGuards(LocalAuthGuard)
   @Post('login')
-  userLogin(@Body() createAuthDto: CreateAuthDto) {
-    return this.authService.login(createAuthDto);
+  userLogin(@Request() req) {
+    return req.user;
   }
 
+  @UseGuards(AuthGuard('jwt'))
   @Post('store')
   create(@Body() createAuthDto: CreateAuthDto) {
     return this.authService.create(createAuthDto);
   }
 
+  @UseGuards(AuthGuard('jwt'))
   @Get('profile')
   UserProfileInfo(@Request() req) {
-    // console.log('Request ');
+    console.log('Request ', req.user);
     return req.user;
   }
 }

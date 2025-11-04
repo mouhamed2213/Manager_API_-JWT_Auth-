@@ -56,7 +56,7 @@ export class UsersService {
   async findOne(creaateUserDto: CreaateUserDto): Promise<User> {
     try {
       const { email, password } = creaateUserDto;
-
+      console.log('USER DATA ', email, password);
       // find user query
       const [user] = await this.db
         .select()
