@@ -42,6 +42,7 @@ export class UsersController {
   @Get('profile')
   UserProfileInfo(@Request() req) {
     // console.log(' User Profile  ');
+
     return req.user;
   }
 }
