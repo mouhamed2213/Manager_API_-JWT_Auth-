@@ -5,19 +5,21 @@ import { CreateAuthDto as AuthDto } from '../dto/create-auth.dto';
 import { Payload } from '../../../shared/interfaces/common.interfaces';
 import { ConfigService } from '@nestjs/config';
 
+// extract token from incomig request validated , used to protect rout
+// not token not connect , have a token you can access
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
-  constructor(private configService: ConfigService) {
+  constructor(configService: ConfigService) {
     super({
-      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(), // replace the extractDataFromHeader(...)  in the auth.guard
-      secretOrKey: configService.get<string>('jwt_values.secret_key')!, // the jwtService.verify(token,{secrecte : })
+      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+      secretOrKey: configService.get<string>('jwt_values.secret_key')!,
       ignoreExpiration: false,
     });
   }
 
   async validate(payload: Payload) {
-    // reaplce the paylod decrypte and returned by the  verification / and se manually set of  request['user'] = payload;
-    return payload;
+    // console.log('jwt validated : ', payload);
+    return { payload };
   }
 }
 

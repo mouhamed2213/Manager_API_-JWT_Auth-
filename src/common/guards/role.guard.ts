@@ -25,12 +25,16 @@ export class RoleGuard implements CanActivate {
 
     // get the user role from the request
     const { route, user, method } = context.switchToHttp().getRequest();
+    const UserRole = user.payload.userRole;
 
-    // console.log(user.userP);
-    const canAccess: boolean = checkRole.some((role) => user.userP === role); // retun true or false
+    const canAccess: boolean = checkRole.some((role) => UserRole === role); // retun true or false
     if (!canAccess) {
       throw new ForbiddenException();
+    } else {
+      console.log('Handle', context.getHandler());
+      console.log('class', context.getClass());
     }
+
     return canAccess;
   }
 }

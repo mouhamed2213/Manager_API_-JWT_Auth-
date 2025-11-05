@@ -21,5 +21,19 @@ export class CreaateUserDto {
   password: string;
 
   @IsString()
+  role: string;
+}
+
+export class FindUserDto {
+  @IsEmail()
+  @IsNotEmpty()
+  email: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @MinLength(3)
+  password: string;
+
+  @IsString()
   role?: string;
 }

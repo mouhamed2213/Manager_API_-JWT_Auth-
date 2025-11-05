@@ -16,7 +16,7 @@ export class AuthService {
     return 'This action adds a new auth';
   }
 
-  async login(createAuthDto: CreateAuthDto) {
+  async validateUser(createAuthDto: CreateAuthDto) {
     const user: User = await this.usersService.findOne(createAuthDto);
     if (!user) {
       throw new UnauthorizedException('Email or password incorrect');
@@ -28,7 +28,7 @@ export class AuthService {
     const payload: Payload = {
       sub: userP.id!,
       email: userP.email,
-      userRole: user.role!,
+      userRole: userP.role!,
     };
     const access_token = await this.jwtService.signAsync(payload);
 

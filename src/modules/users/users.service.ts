@@ -11,7 +11,7 @@ import { User } from './interface';
 import { UserTable } from 'src/db/schemas';
 import * as bcrypt from 'bcrypt';
 import { and, eq } from 'drizzle-orm';
-
+import { FindUserDto } from './DTO/user.dto';
 @Injectable()
 export class UsersService {
   constructor(@Inject(DRIZZLE_TOKEN) private db: any) {}
@@ -53,9 +53,9 @@ export class UsersService {
   }
 
   // find one user
-  async findOne(creaateUserDto: CreaateUserDto): Promise<User> {
+  async findOne(data: FindUserDto): Promise<User> {
     try {
-      const { email, password } = creaateUserDto;
+      const { email, password } = data;
       console.log('USER DATA ', email, password);
       // find user query
       const [user] = await this.db

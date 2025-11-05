@@ -10,6 +10,8 @@ import { Reflector } from '@nestjs/core';
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
 import { Payload } from '../../shared/interfaces/common.interfaces';
+
+// he's replaced by the  jwt
 @Injectable()
 export class AuthGuard implements CanActivate {
   constructor(

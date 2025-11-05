@@ -14,6 +14,7 @@ import { User } from './interface';
 import { AuthGuard } from '@nestjs/passport';
 import { Roles } from 'src/common/decorators/public/role.decorator';
 import { RoleGuard } from 'src/common/guards/role.guard';
+import { JwtAuthGuard } from 'src/common/guards/jwt.auth.guard';
 @Controller('users')
 export class UsersController {
   constructor(
@@ -23,20 +24,21 @@ export class UsersController {
 
   // // strore user
   @HttpCode(201)
-  @UseGuards(AuthGuard('jwt'))
-  @Post()
+  @UseGuards(JwtAuthGuard) // custom gruar file for morre access
+  @Post('create')
   async createUser(@Body() creaateUserDto: CreaateUserDto) {
     return await this.usersService.createUser(creaateUserDto);
   }
 
-  @Get()
-  @UseGuards(AuthGuard('jwt'))
+  @Get('all-users')
+  @UseGuards(AuthGuard('jwt'), RoleGuard)
+  @Roles('admin')
   async findUser() {
     return await this.usersService.find();
   }
 
   @UseGuards(AuthGuard('jwt'), RoleGuard)
-  @Roles('cliednt')
+  @Roles('client')
   @Get('profile')
   UserProfileInfo(@Request() req) {
     // console.log(' User Profile  ');

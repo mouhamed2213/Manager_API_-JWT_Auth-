@@ -14,7 +14,7 @@
         "transient": false,
         "exported": false,
         "token": "JwtModule",
-        "initTime": 2.074300000000221
+        "initTime": 5.554700000000594
       }
     },
     "203550704": {
@@ -30,7 +30,7 @@
         "transient": false,
         "exported": true,
         "token": "ExternalContextCreator",
-        "initTime": 3.0511999999998807
+        "initTime": 6.3215000000054715
       }
     },
     "211572259": {
@@ -57,7 +57,7 @@
         "transient": false,
         "exported": false,
         "token": "InternalCoreModule",
-        "initTime": 3.8380999999999403
+        "initTime": 6.966599999999744
       }
     },
     "233936880": {
@@ -91,20 +91,19 @@
         "token": "ModuleRef"
       }
     },
-    "314511636": {
-      "id": "314511636",
-      "label": "28458c6b05b222f7483b7",
+    "385041166": {
+      "id": "385041166",
+      "label": "JwtStrategy",
       "parent": "-1134487807",
       "metadata": {
-        "type": "injectable",
+        "type": "provider",
         "internal": false,
         "sourceModuleName": "AuthModule",
         "durable": false,
         "static": true,
         "transient": false,
         "exported": false,
-        "token": "28458c6b05b222f7483b7",
-        "subtype": "guard"
+        "token": "JwtStrategy"
       }
     },
     "555176277": {
@@ -115,6 +114,21 @@
         "global": true,
         "dynamic": true,
         "internal": true
+      }
+    },
+    "562464579": {
+      "id": "562464579",
+      "label": "RoleGuard",
+      "parent": "-1134487807",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "AuthModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "RoleGuard"
       }
     },
     "603011239": {
@@ -161,7 +175,7 @@
         "transient": false,
         "exported": true,
         "token": "Reflector",
-        "initTime": 3.590400000000045
+        "initTime": 6.731500000001688
       }
     },
     "863216333": {
@@ -203,7 +217,23 @@
         "transient": false,
         "exported": true,
         "token": "Symbol(CONFIG_SERVICE)",
-        "initTime": 3.398200000000088
+        "initTime": 8.818400000003749
+      }
+    },
+    "957643104": {
+      "id": "957643104",
+      "label": "CONFIGURATION(35e96372-95f1-441b-99f5-e857cb617b35)",
+      "parent": "1712628187",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ConfigModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "CONFIGURATION(35e96372-95f1-441b-99f5-e857cb617b35)",
+        "initTime": 6.130299999997078
       }
     },
     "1063746662": {
@@ -219,7 +249,7 @@
         "transient": false,
         "exported": true,
         "token": "CONFIGURATION_TOKEN",
-        "initTime": 2.585399999999936
+        "initTime": 6.056600000003527
       }
     },
     "1063852564": {
@@ -236,7 +266,7 @@
         "transient": false,
         "exported": false,
         "token": "ConnectionModule",
-        "initTime": 2.50669999999991
+        "initTime": 5.994400000003225
       }
     },
     "1064117840": {
@@ -298,8 +328,7 @@
         "static": true,
         "transient": false,
         "exported": false,
-        "token": "CONFIGURATION_LOADER",
-        "initTime": 3.66379999999981
+        "token": "CONFIGURATION_LOADER"
       }
     },
     "1404752088": {
@@ -317,8 +346,18 @@
         "token": "AuthController",
         "enhancers": [
           {
-            "id": "314511636",
+            "id": "-1097834842",
             "methodKey": "userLogin",
+            "subtype": "guard"
+          },
+          {
+            "id": "-870250481",
+            "methodKey": "create",
+            "subtype": "guard"
+          },
+          {
+            "id": "-870250481",
+            "methodKey": "UserProfileInfo",
             "subtype": "guard"
           }
         ]
@@ -338,7 +377,22 @@
         "transient": false,
         "exported": true,
         "token": "Reflector",
-        "initTime": 4.569400000000314
+        "initTime": 10.034799999993993
+      }
+    },
+    "1465724082": {
+      "id": "1465724082",
+      "label": "LocalStrategy",
+      "parent": "-1134487807",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "AuthModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "LocalStrategy"
       }
     },
     "1542581243": {
@@ -413,7 +467,7 @@
         "transient": false,
         "exported": false,
         "token": "ConfigModule",
-        "initTime": 2.950800000000072
+        "initTime": 6.392100000004575
       }
     },
     "1787828844": {
@@ -430,7 +484,23 @@
         "transient": false,
         "exported": false,
         "token": "ConfigHostModule",
-        "initTime": 2.603900000000067
+        "initTime": 6.069200000005367
+      }
+    },
+    "1892663321": {
+      "id": "1892663321",
+      "label": "7fb7b1bf5892e3ddba6af",
+      "parent": "-2003726489",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "UsersModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "7fb7b1bf5892e3ddba6af",
+        "subtype": "guard"
       }
     },
     "1919157847": {
@@ -447,7 +517,7 @@
         "transient": false,
         "exported": true,
         "token": "REQUEST",
-        "initTime": 2.761199999999917
+        "initTime": 4.926699999996345
       }
     },
     "2118694856": {
@@ -512,7 +582,7 @@
         "transient": true,
         "exported": true,
         "token": "INQUIRER",
-        "initTime": 2.7489000000000487
+        "initTime": 4.920599999997648
       }
     },
     "-26938366": {
@@ -528,7 +598,7 @@
         "transient": false,
         "exported": true,
         "token": "ModulesContainer",
-        "initTime": 2.9646999999999935
+        "initTime": 6.3277000000016415
       }
     },
     "-326832201": {
@@ -544,7 +614,7 @@
         "transient": false,
         "exported": true,
         "token": "HttpAdapterHost",
-        "initTime": 2.9479999999998654
+        "initTime": 6.336000000002969
       }
     },
     "-702581189": {
@@ -560,7 +630,7 @@
         "transient": false,
         "exported": true,
         "token": "LazyModuleLoader",
-        "initTime": 2.943200000000161
+        "initTime": 6.336100000000442
       }
     },
     "-1904419534": {
@@ -576,7 +646,7 @@
         "transient": false,
         "exported": true,
         "token": "SerializedGraph",
-        "initTime": 2.9284999999999854
+        "initTime": 6.240799999999581
       }
     },
     "-19112576": {
@@ -603,7 +673,7 @@
         "transient": false,
         "exported": false,
         "token": "AppModule",
-        "initTime": 2.970100000000002
+        "initTime": 6.404600000001665
       }
     },
     "-71302842": {
@@ -638,6 +708,22 @@
         "token": "ApplicationConfig"
       }
     },
+    "-2130614055": {
+      "id": "-2130614055",
+      "label": "AppService",
+      "parent": "-19112576",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "AppModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "AppService",
+        "initTime": 6.394200000002456
+      }
+    },
     "-503631789": {
       "id": "-503631789",
       "label": "ConfigService",
@@ -650,24 +736,7 @@
         "static": true,
         "transient": false,
         "exported": true,
-        "token": "ConfigService",
-        "initTime": 5.090900000000147
-      }
-    },
-    "-732510179": {
-      "id": "-732510179",
-      "label": "CONFIGURATION(020dadce-0d5d-48a5-a797-ebe9f7970815)",
-      "parent": "1712628187",
-      "metadata": {
-        "type": "provider",
-        "internal": false,
-        "sourceModuleName": "ConfigModule",
-        "durable": false,
-        "static": true,
-        "transient": false,
-        "exported": true,
-        "token": "CONFIGURATION(020dadce-0d5d-48a5-a797-ebe9f7970815)",
-        "initTime": 2.652099999999791
+        "token": "ConfigService"
       }
     },
     "-1267340809": {
@@ -735,7 +804,7 @@
         "transient": false,
         "exported": false,
         "token": "UsersModule",
-        "initTime": 2.462300000000141
+        "initTime": 5.963799999997718
       }
     },
     "-618964563": {
@@ -770,6 +839,22 @@
         "token": "ApplicationConfig"
       }
     },
+    "-937810075": {
+      "id": "-937810075",
+      "label": "RoleGuard",
+      "parent": "-2003726489",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "UsersModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "RoleGuard",
+        "subtype": "guard"
+      }
+    },
     "-1102473136": {
       "id": "-1102473136",
       "label": "UsersController",
@@ -782,7 +867,29 @@
         "static": true,
         "transient": false,
         "exported": false,
-        "token": "UsersController"
+        "token": "UsersController",
+        "enhancers": [
+          {
+            "id": "1892663321",
+            "methodKey": "createUser",
+            "subtype": "guard"
+          },
+          {
+            "id": "1892663321",
+            "methodKey": "findUser",
+            "subtype": "guard"
+          },
+          {
+            "id": "1892663321",
+            "methodKey": "UserProfileInfo",
+            "subtype": "guard"
+          },
+          {
+            "id": "-937810075",
+            "methodKey": "UserProfileInfo",
+            "subtype": "guard"
+          }
+        ]
       }
     },
     "-1134487807": {
@@ -809,7 +916,7 @@
         "transient": false,
         "exported": false,
         "token": "AuthModule",
-        "initTime": 2.4164999999998145
+        "initTime": 5.927700000000186
       }
     },
     "-120792986": {
@@ -843,6 +950,38 @@
         "token": "AuthService"
       }
     },
+    "-1097834842": {
+      "id": "-1097834842",
+      "label": "LocalAuthGuard",
+      "parent": "-1134487807",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "AuthModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "LocalAuthGuard",
+        "subtype": "guard"
+      }
+    },
+    "-870250481": {
+      "id": "-870250481",
+      "label": "7fb7b1bf5892e3ddba6af",
+      "parent": "-1134487807",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "AuthModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "7fb7b1bf5892e3ddba6af",
+        "subtype": "guard"
+      }
+    },
     "-491114354": {
       "id": "-491114354",
       "label": "ConfigModule",
@@ -857,7 +996,7 @@
         "transient": false,
         "exported": false,
         "token": "ConfigModule",
-        "initTime": 2.1429000000002816
+        "initTime": 5.608200000002398
       }
     },
     "-408540750": {
@@ -889,8 +1028,7 @@
         "scope": 0,
         "transient": false,
         "exported": true,
-        "token": "ConfigService",
-        "initTime": 4.235599999999977
+        "token": "ConfigService"
       }
     },
     "-1959092373": {
@@ -917,7 +1055,7 @@
         "transient": false,
         "exported": false,
         "token": "PassportModule",
-        "initTime": 2.0850000000000364
+        "initTime": 5.561599999993632
       }
     },
     "-1677432987": {
@@ -979,6 +1117,21 @@
     }
   },
   "edges": {
+    "128939623": {
+      "source": "-1102473136",
+      "target": "1892663321",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "UsersModule",
+        "sourceClassName": "UsersController",
+        "targetClassName": "7fb7b1bf5892e3ddba6af",
+        "sourceClassToken": "UsersController",
+        "targetClassToken": "7fb7b1bf5892e3ddba6af",
+        "targetModuleName": "UsersModule",
+        "injectionType": "decorator"
+      },
+      "id": "128939623"
+    },
     "185446636": {
       "source": "-1959092373",
       "target": "555176277",
@@ -1056,22 +1209,6 @@
       },
       "id": "353572985"
     },
-    "364651506": {
-      "source": "1310883338",
-      "target": "-732510179",
-      "metadata": {
-        "type": "class-to-class",
-        "sourceModuleName": "ConfigModule",
-        "sourceClassName": "CONFIGURATION_LOADER",
-        "targetClassName": "CONFIGURATION(020dadce-0d5d-48a5-a797-ebe9f7970815)",
-        "sourceClassToken": "CONFIGURATION_LOADER",
-        "targetClassToken": "CONFIGURATION(020dadce-0d5d-48a5-a797-ebe9f7970815)",
-        "targetModuleName": "ConfigModule",
-        "keyOrIndex": 1,
-        "injectionType": "constructor"
-      },
-      "id": "364651506"
-    },
     "584653416": {
       "source": "1712628187",
       "target": "555176277",
@@ -1081,6 +1218,21 @@
         "targetModuleName": "InternalCoreModule"
       },
       "id": "584653416"
+    },
+    "613449666": {
+      "source": "1404752088",
+      "target": "-1097834842",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "AuthModule",
+        "sourceClassName": "AuthController",
+        "targetClassName": "LocalAuthGuard",
+        "sourceClassToken": "AuthController",
+        "targetClassToken": "LocalAuthGuard",
+        "targetModuleName": "AuthModule",
+        "injectionType": "decorator"
+      },
+      "id": "613449666"
     },
     "784525888": {
       "source": "-536515674",
@@ -1192,6 +1344,21 @@
       },
       "id": "1176615609"
     },
+    "1179463916": {
+      "source": "1404752088",
+      "target": "-870250481",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "AuthModule",
+        "sourceClassName": "AuthController",
+        "targetClassName": "7fb7b1bf5892e3ddba6af",
+        "sourceClassToken": "AuthController",
+        "targetClassToken": "7fb7b1bf5892e3ddba6af",
+        "targetModuleName": "AuthModule",
+        "injectionType": "decorator"
+      },
+      "id": "1179463916"
+    },
     "1358466697": {
       "source": "-1267340809",
       "target": "-536515674",
@@ -1221,22 +1388,6 @@
         "targetModuleName": "ConfigModule"
       },
       "id": "1414936007"
-    },
-    "1475920902": {
-      "source": "-503631789",
-      "target": "930519593",
-      "metadata": {
-        "type": "class-to-class",
-        "sourceModuleName": "ConfigModule",
-        "sourceClassName": "ConfigService",
-        "targetClassName": "ConfigService",
-        "sourceClassToken": "ConfigService",
-        "targetClassToken": "Symbol(CONFIG_SERVICE)",
-        "targetModuleName": "ConfigHostModule",
-        "keyOrIndex": 0,
-        "injectionType": "constructor"
-      },
-      "id": "1475920902"
     },
     "1690588001": {
       "source": "-1134487807",
@@ -1287,70 +1438,6 @@
         "targetModuleName": "ConfigModule"
       },
       "id": "2109546608"
-    },
-    "-951393523": {
-      "source": "930519593",
-      "target": "1063746662",
-      "metadata": {
-        "type": "class-to-class",
-        "sourceModuleName": "ConfigHostModule",
-        "sourceClassName": "ConfigService",
-        "targetClassName": "CONFIGURATION_TOKEN",
-        "sourceClassToken": "Symbol(CONFIG_SERVICE)",
-        "targetClassToken": "CONFIGURATION_TOKEN",
-        "targetModuleName": "ConfigHostModule",
-        "keyOrIndex": 0,
-        "injectionType": "constructor"
-      },
-      "id": "-951393523"
-    },
-    "-1045206778": {
-      "source": "1310883338",
-      "target": "1063746662",
-      "metadata": {
-        "type": "class-to-class",
-        "sourceModuleName": "ConfigModule",
-        "sourceClassName": "CONFIGURATION_LOADER",
-        "targetClassName": "CONFIGURATION_TOKEN",
-        "sourceClassToken": "CONFIGURATION_LOADER",
-        "targetClassToken": "CONFIGURATION_TOKEN",
-        "targetModuleName": "ConfigHostModule",
-        "keyOrIndex": 0,
-        "injectionType": "constructor"
-      },
-      "id": "-1045206778"
-    },
-    "-1532183452": {
-      "source": "-503631789",
-      "target": "-732510179",
-      "metadata": {
-        "type": "class-to-class",
-        "sourceModuleName": "ConfigModule",
-        "sourceClassName": "ConfigService",
-        "targetClassName": "CONFIGURATION(020dadce-0d5d-48a5-a797-ebe9f7970815)",
-        "sourceClassToken": "ConfigService",
-        "targetClassToken": "CONFIGURATION(020dadce-0d5d-48a5-a797-ebe9f7970815)",
-        "targetModuleName": "ConfigModule",
-        "keyOrIndex": 1,
-        "injectionType": "constructor"
-      },
-      "id": "-1532183452"
-    },
-    "-1851085465": {
-      "source": "-503631788",
-      "target": "930519593",
-      "metadata": {
-        "type": "class-to-class",
-        "sourceModuleName": "ConfigModule",
-        "sourceClassName": "ConfigService",
-        "targetClassName": "ConfigService",
-        "sourceClassToken": "ConfigService",
-        "targetClassToken": "Symbol(CONFIG_SERVICE)",
-        "targetModuleName": "ConfigHostModule",
-        "keyOrIndex": 0,
-        "injectionType": "constructor"
-      },
-      "id": "-1851085465"
     },
     "-844262897": {
       "source": "-19112576",
@@ -1562,20 +1649,81 @@
       },
       "id": "-1755462187"
     },
-    "-800169741": {
+    "-643070887": {
+      "source": "-1102473136",
+      "target": "1892663321",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "UsersModule",
+        "sourceClassName": "UsersController",
+        "targetClassName": "7fb7b1bf5892e3ddba6af",
+        "sourceClassToken": "UsersController",
+        "targetClassToken": "7fb7b1bf5892e3ddba6af",
+        "targetModuleName": "UsersModule",
+        "injectionType": "decorator"
+      },
+      "id": "-643070887"
+    },
+    "-643070886": {
+      "source": "-1102473136",
+      "target": "1892663321",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "UsersModule",
+        "sourceClassName": "UsersController",
+        "targetClassName": "7fb7b1bf5892e3ddba6af",
+        "sourceClassToken": "UsersController",
+        "targetClassToken": "7fb7b1bf5892e3ddba6af",
+        "targetModuleName": "UsersModule",
+        "injectionType": "decorator"
+      },
+      "id": "-643070886"
+    },
+    "-2045120237": {
+      "source": "-1102473136",
+      "target": "-937810075",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "UsersModule",
+        "sourceClassName": "UsersController",
+        "targetClassName": "RoleGuard",
+        "sourceClassToken": "UsersController",
+        "targetClassToken": "RoleGuard",
+        "targetModuleName": "UsersModule",
+        "injectionType": "decorator"
+      },
+      "id": "-2045120237"
+    },
+    "-1679217734": {
       "source": "1404752088",
-      "target": "314511636",
+      "target": "-870250481",
       "metadata": {
         "type": "class-to-class",
         "sourceModuleName": "AuthModule",
         "sourceClassName": "AuthController",
-        "targetClassName": "28458c6b05b222f7483b7",
+        "targetClassName": "7fb7b1bf5892e3ddba6af",
         "sourceClassToken": "AuthController",
-        "targetClassToken": "28458c6b05b222f7483b7",
+        "targetClassToken": "7fb7b1bf5892e3ddba6af",
         "targetModuleName": "AuthModule",
         "injectionType": "decorator"
       },
-      "id": "-800169741"
+      "id": "-1679217734"
+    },
+    "-951393523": {
+      "source": "930519593",
+      "target": "1063746662",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ConfigHostModule",
+        "sourceClassName": "ConfigService",
+        "targetClassName": "CONFIGURATION_TOKEN",
+        "sourceClassToken": "Symbol(CONFIG_SERVICE)",
+        "targetClassToken": "CONFIGURATION_TOKEN",
+        "targetModuleName": "ConfigHostModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-951393523"
     }
   },
   "entrypoints": {},
@@ -1586,16 +1734,8 @@
   "status": "partial",
   "metadata": {
     "cause": {
-      "type": "unknown-dependencies",
-      "context": {
-        "index": 0,
-        "dependencies": [
-          "AppService"
-        ],
-        "name": "AppService"
-      },
-      "moduleId": "-19112576",
-      "nodeId": "233936880"
+      "type": "unknown",
+      "error": {}
     }
   }
 }

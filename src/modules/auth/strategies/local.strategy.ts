@@ -1,4 +1,4 @@
-import { Strategy } from 'passport-local'; // type of strategy
+import { Strategy } from 'passport-local'; // local passport ( classic login)
 import { PassportStrategy } from '@nestjs/passport'; // class that our trategie will extend
 import { AuthService } from '../auth.service';
 import { Injectable, UnauthorizedException } from '@nestjs/common';
@@ -6,6 +6,7 @@ import { CreateAuthDto } from '../dto/create-auth.dto';
 
 @Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy) {
+  // validate the user login and return a token
   constructor(private authService: AuthService) {
     super({
       usernameField: 'email',
@@ -16,9 +17,9 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
   // user === user ? user : UnauthorizedException
   async validate(email: string, password: string): Promise<any> {
     const userData = { email, password };
-    const user = await this.authService.login(userData);
+    const user = await this.authService.validateUser(userData);
+    console.log(' User validated : ', user);
 
-    console.log(user);
     if (!user) {
       throw new UnauthorizedException('access denied');
     }
