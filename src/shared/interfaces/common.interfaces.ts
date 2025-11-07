@@ -5,3 +5,7 @@ export interface Payload {
   iat?: number;
   exp?: number;
 }
+
+export interface ResponseInterceptors<T> {
+  data: T;
+}

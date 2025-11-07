@@ -10,7 +10,7 @@ import { AuthGuard } from './common/guards/auth.guard';
 import { APP_GUARD } from '@nestjs/core';
 import { logger } from './common/middleware/logger/logger.middleware';
 import { LoggerMiddleware } from './common/middleware/logger/logger.middleware';
-
+import { MiniTracker } from './common/middleware/logger/mini.tracker.middle';
 @Module({
   imports: [
     ConfigModule.forRoot({ load: [AppConfig], isGlobal: true }),
@@ -29,6 +29,6 @@ import { LoggerMiddleware } from './common/middleware/logger/logger.middleware';
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(logger).forRoutes('users');
+    consumer.apply(LoggerMiddleware, MiniTracker).forRoutes('users');
   }
 }

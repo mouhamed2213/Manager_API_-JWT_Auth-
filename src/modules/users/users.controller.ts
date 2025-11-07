@@ -15,6 +15,9 @@ import { AuthGuard } from '@nestjs/passport';
 import { Roles } from 'src/common/decorators/public/role.decorator';
 import { RoleGuard } from 'src/common/guards/role.guard';
 import { JwtAuthGuard } from 'src/common/guards/jwt.auth.guard';
+import { UseInterceptors } from '@nestjs/common';
+import { LogginInterceptor } from '../../common/interceptors/logging.interceptor';
+
 @Controller('users')
 export class UsersController {
   constructor(
@@ -38,8 +41,9 @@ export class UsersController {
   }
 
   @UseGuards(AuthGuard('jwt'), RoleGuard)
-  @Roles('client')
+  @Roles('admin')
   @Get('profile')
+  @UseInterceptors(LogginInterceptor)
   UserProfileInfo(@Request() req) {
     // console.log(' User Profile  ');
 

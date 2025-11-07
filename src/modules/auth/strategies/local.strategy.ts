@@ -18,6 +18,6 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
     const userData = { email, password };
     const user = await this.authService.validateUser(userData);
     console.log(' User validated : ', user);
-    return user;
+    return user; // user token
   }
 }
