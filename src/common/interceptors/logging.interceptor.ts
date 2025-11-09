@@ -8,7 +8,7 @@ import { ResponseInterceptors } from '../../shared/interfaces/common.interfaces'
 import { map, Observable, tap } from 'rxjs';
 @Injectable()
 export class LogginInterceptor implements NestInterceptor {
-  intercept(context: ExecutionContext, next: CallHandler) {
+  intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     const request = context.switchToHttp().getRequest();
     console.log('Data before', request.user);
     const now = Date.now();

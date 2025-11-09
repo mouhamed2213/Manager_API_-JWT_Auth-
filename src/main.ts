@@ -1,6 +1,6 @@
 import { NestFactory, PartialGraphHost } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { ValidationPipe } from '@nestjs/common';
+import { ParseIntPipe, ValidationPipe } from '@nestjs/common';
 import * as fs from 'fs';
 
 async function bootstrap() {
@@ -16,6 +16,10 @@ async function bootstrap() {
       forbidNonWhitelisted: true, // throw wrror while unknow filed are sent
       transform: true, // string => number automatically
     }),
+
+    // new ParseIntPipe ({
+
+    // })
   );
 
   await app.listen(process.env.PORT ?? 3000);

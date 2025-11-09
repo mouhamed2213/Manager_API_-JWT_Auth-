@@ -3,9 +3,11 @@ import {
   Controller,
   Get,
   HttpCode,
+  Param,
   Post,
   Request,
   UseGuards,
+  UsePipes,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { ConfigService } from '@nestjs/config';
@@ -17,7 +19,10 @@ import { RoleGuard } from 'src/common/guards/role.guard';
 import { JwtAuthGuard } from 'src/common/guards/jwt.auth.guard';
 import { UseInterceptors } from '@nestjs/common';
 import { LogginInterceptor } from '../../common/interceptors/logging.interceptor';
-
+import { TestTransformPipe } from '../../common/pipes/testTransform.pipe';
+import { ValidationSchemaPipe } from '../../common/pipes/validation.schema.pipe';
+import type { UserLoginDto } from 'src/shared/interfaces/schemas/user.schema';
+import { userSchema } from 'src/shared/interfaces/schemas/user.schema';
 @Controller('users')
 export class UsersController {
   constructor(
@@ -46,7 +51,19 @@ export class UsersController {
   @UseInterceptors(LogginInterceptor)
   UserProfileInfo(@Request() req) {
     // console.log(' User Profile  ');
-
     return req.user;
+  }
+
+  // find user by id
+  @Get(':id')
+  async findbyId(@Param('id', TestTransformPipe) id: string) {
+    console.log('From the controller  to find user by id : ', id);
+  }
+
+  // test validataoin Usind zod
+  @Post('validate')
+  @UsePipes(new ValidationSchemaPipe(userSchema))
+  async test(@Body() body: UserLoginDto) {
+    return body;
   }
 }

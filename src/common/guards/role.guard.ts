@@ -29,7 +29,7 @@ export class RoleGuard implements CanActivate {
 
     const canAccess: boolean = checkRole.some((role) => UserRole === role); // retun true or false
     if (!canAccess) {
-      throw new ForbiddenException();
+      throw new ForbiddenException('[Guard-role] access frobidden');
     }
 
     return canAccess;

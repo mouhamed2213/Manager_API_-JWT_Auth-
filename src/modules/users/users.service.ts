@@ -63,13 +63,13 @@ export class UsersService {
         .from(UserTable)
         .where(eq(UserTable.email, email));
       if (!user) {
-        throw new NotFoundException('Cannot find user');
+        throw new NotFoundException('User or passwor incorrect [p]');
       }
 
       // compare password
       const checkPassword = await bcrypt.compare(password, user.password);
       if (!checkPassword) {
-        throw new UnauthorizedException("password doesn't match");
+        throw new UnauthorizedException('User or passwor incorrect [p]');
       }
       return user;
     } catch (error) {

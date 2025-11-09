@@ -35,7 +35,7 @@ export class AuthGuard implements CanActivate {
 
     if (!token) {
       console.log('Token Missed : auth  guard blocked');
-      throw new UnauthorizedException('Veuillez vous connecter ');
+      throw new UnauthorizedException('Missed Token');
     }
     try {
       // chek token validity
@@ -49,7 +49,6 @@ export class AuthGuard implements CanActivate {
         'Unauthorized : token Expired or corrupted',
       );
     }
-
     return true;
   }
 

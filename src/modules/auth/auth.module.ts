@@ -14,10 +14,11 @@ import { RoleGuard } from '../../common/guards/role.guard';
     UsersModule,
     ConfigModule,
     PassportModule,
+
     JwtModule.registerAsync({
       global: true,
       imports: [ConfigModule],
-      inject: [ConfigService],
+      inject: [ConfigService], // injected as an conrtoller
       useFactory: async (configService: ConfigService) => ({
         secret: configService.get<string>('jwt_values.secret_key'),
         signOptions: {
