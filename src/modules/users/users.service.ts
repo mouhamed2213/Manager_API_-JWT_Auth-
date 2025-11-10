@@ -8,7 +8,7 @@ import {
 import { CreaateUserDto } from './DTO/user.dto';
 import { DRIZZLE_TOKEN } from '../../config/connection.module';
 import { User } from './interface';
-import { UserTable } from 'src/db/schemas';
+import { UserTable } from 'src/db/schemas/user.schema';
 import * as bcrypt from 'bcrypt';
 import { and, eq } from 'drizzle-orm';
 import { FindUserDto } from './DTO/user.dto';

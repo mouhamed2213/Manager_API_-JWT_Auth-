@@ -8,7 +8,7 @@ import {
   Max,
   MinLength,
 } from 'class-validator';
-import { UserTable } from 'src/db/schemas';
+import { UserTable } from 'src/db/schemas/user.schema';
 
 export class CreaateUserDto {
   @IsEmail()
