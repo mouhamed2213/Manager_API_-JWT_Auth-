@@ -11,6 +11,7 @@ import { CreateAuthDto } from './dto/create-auth.dto';
 import { Public } from 'src/common/decorators/public/public.decorator';
 import { AuthGuard } from '@nestjs/passport';
 import { LocalAuthGuard } from 'src/common/guards/local.auth.guard';
+import type { UserDto } from 'src/shared/schemas/user.schema';
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
@@ -22,9 +23,9 @@ export class AuthController {
     return req.user;
   }
 
-  @UseGuards(AuthGuard('jwt'))
+  // @UseGuards(AuthGuard('jwt'))
   @Post('store')
-  create(@Body() createAuthDto: CreateAuthDto) {
+  create(@Body() createAuthDto: UserDto) {
     return this.authService.create(createAuthDto);
   }
 

@@ -11,12 +11,14 @@ import { APP_GUARD } from '@nestjs/core';
 import { logger } from './common/middleware/logger/logger.middleware';
 import { LoggerMiddleware } from './common/middleware/logger/logger.middleware';
 import { MiniTracker } from './common/middleware/logger/mini.tracker.middle';
+import { ArticleModule } from './article/article.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ load: [AppConfig], isGlobal: true }),
     ConnectionModule,
     UsersModule,
     AuthModule,
+    ArticleModule,
   ],
   controllers: [AppController],
   providers: [

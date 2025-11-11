@@ -5,6 +5,8 @@ import { UsersService } from '../users/users.service';
 import { JwtService } from '@nestjs/jwt';
 import { User } from '../users/interface';
 import { Payload } from 'src/shared/interfaces/common.interfaces';
+import { CreaateUserDto } from '../users/DTO/user.dto';
+import { UserDto } from '../../shared/schemas/user.schema';
 
 @Injectable()
 export class AuthService {
@@ -12,8 +14,8 @@ export class AuthService {
     private usersService: UsersService,
     private readonly jwtService: JwtService,
   ) {}
-  create(createAuthDto: CreateAuthDto) {
-    return 'This action adds a new auth';
+  create(createAuthDto: UserDto) {
+    return this.usersService.createUser(createAuthDto);
   }
 
   async validateUser(createAuthDto: CreateAuthDto) {

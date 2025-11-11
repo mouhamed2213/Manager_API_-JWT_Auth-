@@ -7,4 +7,4 @@ export const userSchema = z.object({
   role: z.enum(['admin', 'client']),
 });
 
-export type UserLoginDto = z.infer<typeof userSchema>;
+export type UserDto = z.infer<typeof userSchema>;

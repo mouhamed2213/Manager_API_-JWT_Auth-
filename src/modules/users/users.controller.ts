@@ -21,8 +21,8 @@ import { UseInterceptors } from '@nestjs/common';
 import { LogginInterceptor } from '../../common/interceptors/logging.interceptor';
 import { TestTransformPipe } from '../../common/pipes/testTransform.pipe';
 import { ValidationSchemaPipe } from '../../common/pipes/validation.schema.pipe';
-import type { UserLoginDto } from 'src/shared/interfaces/schemas/user.schema';
-import { userSchema } from 'src/shared/interfaces/schemas/user.schema';
+import type { UserDto } from 'src/shared/schemas/user.schema';
+import { userSchema } from 'src/shared/schemas/user.schema';
 @Controller('users')
 export class UsersController {
   constructor(
@@ -63,7 +63,7 @@ export class UsersController {
   // test validataoin Usind zod
   @Post('validate')
   @UsePipes(new ValidationSchemaPipe(userSchema))
-  async test(@Body() body: UserLoginDto) {
+  async test(@Body() body: UserDto) {
     return body;
   }
 }
