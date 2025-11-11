@@ -4,15 +4,18 @@ import {
   varchar,
   text,
   timestamp,
-  int,
+  bigint,
 } from 'drizzle-orm/mysql-core';
-import { UserTable as users } from '../schemas/user.schema';
+import { UserTable as users } from './users.schema';
 import { relations } from 'drizzle-orm';
+import {} from 'drizzle-orm/gel-core';
 
 // create table name
 export const ArticleTable = mysqlTable('articles', {
-  id: serial('id').primaryKey().notNull(),
-  author_id: int('author_id').references(() => users.id),
+  id: serial('id').primaryKey(),
+  author_id: bigint('author_id', { mode: 'number', unsigned: true })
+    .references(() => users.id, { onDelete: 'cascade' })
+    .unique(),
   title: varchar('title', { length: 255 }).notNull(),
   content: text('content').notNull(),
   createdAt: timestamp('createdAt').defaultNow().notNull(),
@@ -22,7 +25,7 @@ export const ArticleTable = mysqlTable('articles', {
 // an article is bounded with a user
 
 export const ArticleRelation = relations(ArticleTable, ({ one }) => ({
-  users: one(users, {
+  author: one(users, {
     fields: [ArticleTable.author_id],
     references: [users.id],
   }),
