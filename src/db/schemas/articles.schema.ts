@@ -8,7 +8,8 @@ import {
 } from 'drizzle-orm/mysql-core';
 import { UserTable as users } from './users.schema';
 import { relations } from 'drizzle-orm';
-import {} from 'drizzle-orm/gel-core';
+import { z } from 'zod';
+import tr from 'zod/v4/locales/tr.js';
 
 // create table name
 export const ArticleTable = mysqlTable('articles', {
@@ -31,6 +32,17 @@ export const ArticleRelation = relations(ArticleTable, ({ one }) => ({
   }),
 }));
 
+// schema
+export const createArticleSchema = z
+  .object({
+    id: z.int(),
+    author_id: z.number(),
+    title: z.string().min(3, { message: 'The Title is short ' }),
+    content: z.string().min(20, { message: 'The content is very short ' }),
+  })
+  .omit({ id: true, author_id: true });
+
 // type  article type
-export const ArticleInsert = typeof ArticleTable.$inferInsert;
-export const ArticleSelect = typeof ArticleTable.$inferSelect;
+export type CreateArticleDto = z.infer<typeof createArticleSchema>;
+
+export type Article = typeof ArticleTable.$inferSelect;

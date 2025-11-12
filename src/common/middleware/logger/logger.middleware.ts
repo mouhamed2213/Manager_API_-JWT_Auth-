@@ -49,4 +49,7 @@ export const logger = (req: Request, res: Response, next: NextFunction) => {
 
   console.log('[TokenMiddleware] Token extrait avec succès');
   next();
+
+
+  
 };
