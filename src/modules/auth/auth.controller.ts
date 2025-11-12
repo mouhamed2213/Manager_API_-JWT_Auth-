@@ -24,7 +24,7 @@ export class AuthController {
   }
 
   // @UseGuards(AuthGuard('jwt'))
-  @Post('store')
+  @Post('register')
   create(@Body() createAuthDto: UserDto) {
     return this.authService.create(createAuthDto);
   }

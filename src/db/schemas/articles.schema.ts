@@ -16,7 +16,7 @@ export const ArticleTable = mysqlTable('articles', {
   id: serial('id').primaryKey(),
   author_id: bigint('author_id', { mode: 'number', unsigned: true })
     .references(() => users.id, { onDelete: 'cascade' })
-    .unique(),
+    .notNull(),
   title: varchar('title', { length: 255 }).notNull(),
   content: text('content').notNull(),
   createdAt: timestamp('createdAt').defaultNow().notNull(),
@@ -36,11 +36,11 @@ export const ArticleRelation = relations(ArticleTable, ({ one }) => ({
 export const createArticleSchema = z
   .object({
     id: z.int(),
-    author_id: z.number(),
+    author_id: z.number().optional(),
     title: z.string().min(3, { message: 'The Title is short ' }),
     content: z.string().min(20, { message: 'The content is very short ' }),
   })
-  .omit({ id: true, author_id: true });
+  .omit({ id: true });
 
 // type  article type
 export type CreateArticleDto = z.infer<typeof createArticleSchema>;

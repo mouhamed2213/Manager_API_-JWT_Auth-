@@ -1,11 +1,10 @@
 CREATE TABLE `articles` (
 	`id` serial AUTO_INCREMENT NOT NULL,
-	`author_id` bigint unsigned,
+	`author_id` bigint unsigned NOT NULL,
 	`title` varchar(255) NOT NULL,
 	`content` text NOT NULL,
 	`createdAt` timestamp NOT NULL DEFAULT (now()),
-	CONSTRAINT `articles_id` PRIMARY KEY(`id`),
-	CONSTRAINT `articles_author_id_unique` UNIQUE(`author_id`)
+	CONSTRAINT `articles_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
 CREATE TABLE `users` (
